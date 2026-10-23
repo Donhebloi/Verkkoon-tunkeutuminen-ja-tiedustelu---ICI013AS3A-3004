@@ -33,7 +33,39 @@ Päädyin taajudelle 7190 kHz missä käytiin jotain keskustelua. Laitoin **auto
 
 <img width="1123" height="597" alt="image" src="https://github.com/user-attachments/assets/3cedd6e6-e4f2-4877-b398-c291df529e57" />  
 
-Kokeilin tällä taajuudella myös kaikkia muita modulaatioita mutta silloin puheesta ei saanut mitään selvää. 
+Kokeilin tällä taajuudella myös kaikkia muita modulaatioita mutta silloin puheesta ei saanut mitään selvää.  
 Tähän käytin myös apuna sivulta löytyvää **Quick start guide**:a.  
+
+## c) ADS-B
+
+Siirryin **ADS-B Exchange** sivulle etsimään mieluista konetta.  
+Sivuilta avautui kartta, mistä näki reaaliajassa todella monen koneen lennot.  
+Vaikka vaihtoehtoja oli ihan huimasti, niin päädyin ihan meidän Finnairin koneeseen, joka oli raportin tekohetkellä Keski-Suomen kohdalla. 
+Kartasta näki että lento on lähtenyt Japanista, Osakasta, Kansain kansainväliseltä lentoasemalta.  
+
+<img width="526" height="473" alt="image" src="https://github.com/user-attachments/assets/d7a26eee-2fe8-4db3-8944-db504a7765ad" />  
+
+Kuvassa näkyvä pinkki kone oli se minkä valitsin.  
+Koneen tärkeimmät tiedot:  
+````
+Kutsutunnus: FIN70
+Rekisteri: OH-LWO Finland
+Lentoyhtiö: Finnair Oyj
+Tyyppi: A359
+Tyypinkuvaus: L2J
+Malli: Airbus A-350-900
+Pituus: 219.4 ft = 66.8 m
+Korkeus: 56.3 ft = 17.1 m
+Siipiväli: 212.4 ft = 64.7m
+Polttoaineenkulutus: 2128.94 gal/h = 8058.9 l/h
+````
+Lentokoneen yksityiskohtaisemmat tiedot löytyivät vihreän **FULL DETAILS** napin takaa.  
+
+<img width="183" height="34" alt="image" src="https://github.com/user-attachments/assets/679c1dbc-2d5e-42cb-a1c8-e749fbe32c24" />  
+
+Sivustolta löytyy myös kuva lentokoneesta ja huimasti muutakin tietoa lennosta, kuten mistä lento on alkanut, nopeuden, korkeuden, lennon koordinaatit jne:  
+
+<img width="188" height="1646" alt="image" src="https://github.com/user-attachments/assets/d7c8899c-56d7-4bc6-b195-9bda6f1822a2" />  
+
 
 
