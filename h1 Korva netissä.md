@@ -1,5 +1,13 @@
 # H1 Korva netissä
 
+## x) Spektrini
+
+Tässä hyvin yksinkertainen ja taiteellinen sähkömagneettinen spektri:  
+
+<img width="1269" height="636" alt="image" src="https://github.com/user-attachments/assets/efcd2de5-2f2e-4101-ba26-a9c83ca3f503" />
+
+
+
 
 ## a) WebSDR
 
