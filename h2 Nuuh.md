@@ -35,3 +35,28 @@ Kokeilin onko netti päällä, samalla "Steam" haulla.
 
 Nyt on taas netti päällä.  
 
+
+## c) Wireshark. Asenna Wireshark. Sieppaa liikennettä Wiresharkilla.
+
+Minulla oli jo ennestään Wireshark ladattuna.  
+
+<img width="252" height="146" alt="image" src="https://github.com/user-attachments/assets/ba354b80-dbf7-4f1a-93b0-81c8528a3348" />  
+
+Mutta jos sitä ei ole ja sen haluaa ladata, niin kalissa se onnistuu näin:  
+````
+sudo apt-get update
+sudo apt-get install wireshark
+````
+Alotin sieppaamisen avaamalla wiresharkin ja valitsemalla oikean verkkoliitännän, joka on "eth0".  
+
+<img width="435" height="380" alt="image" src="https://github.com/user-attachments/assets/fd3de507-1306-4ccd-bae0-f9c3ad87fda4" />  
+
+Sitten klikkaamalla sinistä evä kuvaketta wiresharkin vasemmassa yläkulmassa pääsee sieppaamaan liikennettä.  
+
+<img width="407" height="181" alt="image" src="https://github.com/user-attachments/assets/a9d6603d-7487-491a-b779-b09a91304eb2" />  
+
+Avasin hakukoneen ja Youtuben taustalle, jotta wiresharkkiin ilmestyisi paketteja.  
+
+<img width="1662" height="574" alt="image" src="https://github.com/user-attachments/assets/63879d41-fec5-48c8-aac9-591175570d4f" />  
+
+
