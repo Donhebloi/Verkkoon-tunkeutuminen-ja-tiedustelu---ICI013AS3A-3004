@@ -2,6 +2,15 @@
 
 ## x) Lue ja tiivistä
 
+Karvinen 2025: Wireshark - Getting Started  
+- Wireshark on johtava tietoliikenne analysaattori  
+- Suurinosa webbisurffaamisesta on suojattu TLS-salauksella  
+- Wiresharkissa pystyy filtteröimään pakettilistaa eri protokollien avulla
+
+Karvinen 2025: Network Interface Names on Linux  
+- Verkkoliitäntä on melkein kuin verkkokortti, mutta se ei välttämättä ole fyysinen.
+- Yleisiä verkkoliitäntöjä ovat esim. wlp4s0, joka on WiFi-kortti ja enp1s0, joka on langallinen Ethernet-kortti
+- Eth0 ja wlan0 ovat vanhoja verkkoliitännän nimiä, joita uusimmat järjestelmät eivät enään käytä.  
 
 ## a) Linux. Asenna Debian tai Kali Linux virtuaalikoneeseen
 
