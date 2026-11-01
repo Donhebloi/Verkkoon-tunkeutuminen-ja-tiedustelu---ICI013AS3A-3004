@@ -205,7 +205,11 @@ TCP-yhteyden muodostaminen alkaa ns. Kolmivaiheisella kättelyllä. Eli asiakas 
 Karvinen - https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/  
 Karvinen, Wireshark - Getting Started - https://terokarvinen.com/wireshark-getting-started/  
 Karvinen, Network Interface Names on Linux - https://terokarvinen.com/network-interface-linux/#examples-of-common-network-interface-names  
-
-
-
+CoddyKit, TCP/IP:n neljän kerroksen yleiskatsaus - https://www.coddykit.com/fi/courses/networking_fundamentals/the-four-tcp-ip-layers-overview-10134730  
+MACLookup, MAC Address Lookup - https://maclookup.app/  
+HTTPS checker, What Is the DNS HTTPS Record (Type 65) and How Does It Work? - https://httpsornot.com/blog/what-is-dns-https-record  
+geeksforgeeks, TCP flags - https://www.geeksforgeeks.org/computer-networks/tcp-flags/
+geeksforgeeks, TCP 3-Way Handshake Process - https://www.geeksforgeeks.org/computer-networks/tcp-3-way-handshake-process/
+paloalto networks, What Is a TLS/SSL Port? - https://www.paloaltonetworks.com/cyberpedia/what-is-tls-ssl-port
+Wireshark Q&A, Why are 0 length TCP packets returned on some HTTP / TCP sessions? - https://osqa-ask.wireshark.org/questions/52702/why-are-0-length-tcp-packets-returned-on-some-http-tcp-sessions/
 
