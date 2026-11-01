@@ -186,7 +186,7 @@ TCP:
 <img width="947" height="398" alt="image" src="https://github.com/user-attachments/assets/39d538aa-2139-4ffd-855d-a37b0ac4fa60" />  
 
 Tässä tutkin pakettia numero 5, joka sisältää SYN-paketin, mikä liittyy TCP-yhteyden muodostamiseen. Paketin koko on 74 tavua, paketti lähtee liikkeelle virtuaalikoneestani IP-osoitteesta 10.0.2.15 palvelimen IP-osoitteeseen 34.149.226.178.  
-Paketin lähdeportti on 53156 ja kohdeportti on 43. Portti 43 on standardi portti HTTPS liikennettä varten. TCP-flags kohdassa näkyy aikaisemmin mainittu SYN, eli tietokone yrittää aloittaa TCP-yhteyden palvelimeen.  
+Paketin lähdeportti on 53156 ja kohdeportti on 443. Portti 443 on standardi portti HTTPS liikennettä varten. TCP-flags kohdassa näkyy aikaisemmin mainittu SYN, eli tietokone yrittää aloittaa TCP-yhteyden palvelimeen.  
 TCP Segment Lenght on 0 tavua, eli paketissa ei ole varsinaista dataa.  
 TCP-yhteyden muodostaminen alkaa ns. Kolmivaiheisella kättelyllä. Eli asiakas lähettää SYN-paketin, palvelin vastaa SYN-ACK-paketilla ja sitten asiakas kuittaa ACK-paketilla. 
 
