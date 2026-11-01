@@ -88,6 +88,7 @@ Siirtokerros: Kolmas kerros. Huolehtii tiedonsiirrosta laitteiden välillä. Kä
 Sovelluskerros: Neljäs ja ylin kerros. Tarjoaa protokollat, joita ohjelmat käyttävät, kuten DNS-protokollan. 
 ````
 Kerroksien selitykseen käytin **CoddyKit** sivuston materiaaleja.  
+<sup>Linkki lähteissä</sup>
 
 ## e) Mitäs tuli surffattua?
 
@@ -201,6 +202,9 @@ TCP-yhteyden muodostaminen alkaa ns. Kolmivaiheisella kättelyllä. Eli asiakas 
 
 ### Lähteet
 
+Karvinen - https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/  
+Karvinen, Wireshark - Getting Started - https://terokarvinen.com/wireshark-getting-started/  
+Karvinen, Network Interface Names on Linux - https://terokarvinen.com/network-interface-linux/#examples-of-common-network-interface-names  
 
 
 
