@@ -59,4 +59,140 @@ Avasin hakukoneen ja Youtuben taustalle, jotta wiresharkkiin ilmestyisi pakettej
 
 <img width="1662" height="574" alt="image" src="https://github.com/user-attachments/assets/63879d41-fec5-48c8-aac9-591175570d4f" />  
 
+Nyt wiresharkilla pääsee tutkimaan liikennettä.  
+
+## d) Oikeesti TCP/IP. Osoita TCP/IP-mallin neljä kerrosta yhdestä siepatusta paketista.
+
+Aloitin suodattamalla wiresharkin pakettilistan **DNS** haulla ja valitsin listan ensimmäisen DNS-paketin. Wiresharkissa, sinisen evän alapuolella on hakukenttä, minkä avulla pystyy suodattamaan haluamia paketteja.  
+
+<img width="1250" height="96" alt="image" src="https://github.com/user-attachments/assets/1aa494e9-d79d-46f1-b83c-73151b2b76f3" />  
+
+Kun valitsin paketin, niin pakettilistan alapuolelle ilmestyi näkymä, mistä näkee paketin tarkemmat tiedot ja TCP/IP-mallin neljä kerrosta.  
+
+<img width="946" height="104" alt="ipmallit" src="https://github.com/user-attachments/assets/db01394d-a387-4bf7-a257-f86ca1f4ab66" />  
+
+Kerrokset ylhäältä alaspain:  
+````
+Linkkikerros: TCP/IP-mallin alin kerros. Ethernet ja wifi toimivat tässä kerroksessa. Linkkikerros huolehtii tiedonsiirrosta paikallisessa verkossa.
+Internet-kerros: Toinen kerros. Huolehtii IP-osoitteista ja pakettien välittämisestä verkkojen välillä.
+Siirtokerros: Kolmas kerros. Huolehtii tiedonsiirrosta laitteiden välillä. Käyttää porttinumeroita ohjatakseen datan oikealle ohjelmalle.
+Sovelluskerros: Neljäs ja ylin kerros. Tarjoaa protokollat, joita ohjelmat käyttävät, kuten DNS-protokollan. 
+````
+Kerroksien selitykseen käytin **CoddyKit** sivuston materiaaleja.  
+
+## e) Mitäs tuli surffattua?
+
+Tiedoston lataamisen jälkeen, drag and droppasin tiedoston Kaliin ja avasin sen wiresharkissa, File -> Open.  
+Ekana valitsin wiresharkin ylävalikosta Statistics -> Capture File Properties, josta näki kaappauksen tietoja.  
+
+<img width="1191" height="642" alt="image" src="https://github.com/user-attachments/assets/eafbe7ab-57aa-4abb-b527-7a24febd83a7" />  
+
+Tästä näkee mm.
+````
+Pakettien lukumäärän: 283
+Kaappauksen koko: 122445 tavua
+kaappauksen kesto: 7.536 sekunttia
+````
+
+Sitten lähdin tutkimaan protokollia. Valitsin ylävalikosta Statistics -> Protocol Hierarchy  
+
+<img width="1164" height="210" alt="image" src="https://github.com/user-attachments/assets/092099e3-445b-4f36-84d7-c37f24271c50" />  
+
+Tästä näkee protokollat, uudestaan pakettien määrän ja kuinka suuren osan paketeista kukin protokolla vie.  
+````
+Ethernet: Kaikki 283 pakettia kulki Ethernet-verkossa.
+IPv4: 281 pakettia.
+UDP: 44 pakettia, josta QUIC 14 pakettia ja DNS 30 pakettia.
+TCP: 237 pakettia, josta TLS 99 pakettia.
+ARP: 2 pakettia.
+````
+
+Sitten katsoin vielä kaappauksen päätepisteet, ylävalikosta Statistics -> Endpoints.  
+
+<img width="971" height="121" alt="Näyttökuva 2026-11-01 173953" src="https://github.com/user-attachments/assets/f75c860b-9f82-41df-91b2-4129134aaee9" />  
+
+<img width="1089" height="192" alt="Näyttökuva 2026-11-01 174006" src="https://github.com/user-attachments/assets/321f4fa6-1bbf-4a4a-98e5-76c17b4eaa53" />  
+
+Kaappauksessa näkyy kaksi Ethernet-päätepistettä ja seitsemän IPv4-päätepistettä. 
+
+
+## f) Vapaaehtoinen
+
+Vapaaehtoinen jää nyt tekemättä.
+
+
+## g) Minkä merkkinen verkkokortti käyttäjällä on?
+
+Lähdin selvittämään verkkokortin merkkiä MACLookup sivuston kautta. Syötin wiresharkin endpoints sivulta löydetyn "52:54:00:2f:e1:e5" MAC osoitteen sivustolle, mutta vastaan tuli ongelma.  
+
+<img width="1151" height="494" alt="image" src="https://github.com/user-attachments/assets/30e3b353-410b-4f54-91fe-078797b131af" />  
+
+Mitään merkkiä ei löytynyt. MAC osoite on "Locally Administered Address" eli paikallisesti määritetty. Verkkokortti on todennäköisesti virtuaalinen, eikä kenenkään fyysisen valmistajan.
+
+
+## h) Millä weppipalvelimella käyttäjä on surffaillut?
+
+Aloitin menemällä pakettilistaukseen ja suodattamalla **http**, mutta tulokseksi sain tyhjän listauksen.  
+Tehtävänannossa on mainittu, että yhteys on suojattu TLS-salauksella, joten tämän jälkeen kokeilin suodattaa pakettilistan **tls** haulla.  
+
+<img width="1660" height="340" alt="image" src="https://github.com/user-attachments/assets/5396f487-8cdc-49ee-b9c0-8980271badcf" />  
+
+Sieltä tuli hyvää tietoa näkyviin. Info sarakkeissa joissa on "Client Hello" niin lukee myös millä verkkosivulla on käyty.  
+````
+(SNI=terokarvinen.com)
+(SNI=gc.zgo.at)
+(SNI=terokarvinen.goatcounter.com)
+````
+Mutta tästä ei nyt kuitenkaan webbipalvelinta selvinnyt. Valitsin ensimmäisen sarakkeen missä lukee "terokarvinen.com" ja lähdin availemaan TLS:ssän tietoja.  
+
+<img width="950" height="393" alt="image" src="https://github.com/user-attachments/assets/1440c76a-f7f9-4af4-a670-67753400d255" />  
+
+Päädyin osioon "Server Name Indication extension" josta ajattelin löytäväni mikä webbipalvelin on kyseessä. No mutta enpä löytänyt, sielläkin luki vain "terokarvinen.com"  
+Päätin tämän jälkeen hyökätä komentorivin kimppuun ja kokeilla **curl** komentoa.  
+````
+curl -I https://terokarvinen.com
+````
+Lisäsin komentoon -I option jotta komentoriville tulostuisi vain HTTP headerin tiedot, eikä ihan kaikki sivun tiedot.  
+
+<img width="589" height="311" alt="image" src="https://github.com/user-attachments/assets/1ca32797-246f-48fb-b7de-40eb8aef9867" />  
+
+Ja tästä selvisi Apache webbipalvelin.  
+Tein saman myös terokarvinen.goatcounter.com ja gc.zgo.at osoitteille.  
+
+<img width="503" height="183" alt="image" src="https://github.com/user-attachments/assets/c85e48f2-c0af-4fd3-941d-b72dd7b2ceea" />  
+
+gc.zgo.at osoitteelle serveriksi ilmeni BunnyCDN, mikä nopeuttaa verkkosivujen ja niiden sisällön lataamista.  
+terokarvinen.goatcounter.com ei paljastanut serveriä curl komennolla.  
+En tosiaan tiedä, oliko tämä oikea tapa selvittää nämä asiat, mutta ainakin näin sai jotain selville.  
+
+## i) Analyysi. Sieppaa pieni määrä omaa liikennettäsi.
+
+Aloitin taas valitsemalla **eth0** verkkoliitännän, pistin wiresharkin pyörimään, avasin selaimen ja kävin adidaksen sekä hotels.com sivuilla.  
+Sivustot oli muutaman sekunnin auki ja wireshark sai kaapattua 1990 pakettia.  
+Valitsin analysoitavaksi yhden DNS ja TCP paketin.  
+DNS:  
+
+<img width="1102" height="15" alt="image" src="https://github.com/user-attachments/assets/34651f0b-d835-4267-a514-535032e64a56" />  
+
+<img width="948" height="297" alt="image" src="https://github.com/user-attachments/assets/94d954d1-a8c7-4c95-89b9-06a6242f1c9c" />  
+
+Tutkin pakettia numero 364, joka sisältää DNS-kyselyn. Paketin koko on 73 tavua, joka lähtee virtuaalikoneeltani IP-osoitteesta 10.0.2.15 ja sen kohdeosoite on 192.168.50.1. DNS-kysely käyttää UDP-protokollaa, sen lähdeportti on 52080 ja kohdeportti on 53.  
+Tietokone kysyy tässä DNS-palvelimelta osoitetta www.adidas.fi ja HTTPS-tietueita. Kyselyn tyyppi on HTTPS (65), jonka avulla selaimet ja verkkoyhteydet saavat tiedot verkkosivustoon yhdistämisestä DNS-kyselyn aikana.  
+
+TCP:  
+
+<img width="1507" height="19" alt="image" src="https://github.com/user-attachments/assets/602a8abe-b0f1-4de4-a1f5-4bb129979306" />  
+
+<img width="947" height="398" alt="image" src="https://github.com/user-attachments/assets/39d538aa-2139-4ffd-855d-a37b0ac4fa60" />  
+
+Tässä tutkin pakettia numero 5, joka sisältää SYN-paketin, mikä liittyy TCP-yhteyden muodostamiseen. Paketin koko on 74 tavua, paketti lähtee liikkeelle virtuaalikoneestani IP-osoitteesta 10.0.2.15 palvelimen IP-osoitteeseen 34.149.226.178.  
+Paketin lähdeportti on 53156 ja kohdeportti on 43. Portti 43 on standardi portti HTTPS liikennettä varten. TCP-flags kohdassa näkyy aikaisemmin mainittu SYN, eli tietokone yrittää aloittaa TCP-yhteyden palvelimeen.  
+TCP Segment Lenght on 0 tavua, eli paketissa ei ole varsinaista dataa.  
+TCP-yhteyden muodostaminen alkaa ns. Kolmivaiheisella kättelyllä. Eli asiakas lähettää SYN-paketin, palvelin vastaa SYN-ACK-paketilla ja sitten asiakas kuittaa ACK-paketilla. 
+
+### Lähteet
+
+
+
+
 
