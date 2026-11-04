@@ -123,9 +123,11 @@ Janan vasemman yläreunan vieressä on sininen "i" nappi mistä näkee lisää t
 Janan koko: 10.47MB  
 Luonti päivämäärä: 4.11.2026  
 Näytteet: 5491580  
-Näytteenottotaajuus: 1.0M
+Näytteenottotaajuus: 1.0M  
 Näytteen pituus: 5.49 s  
 
+
+## g) Bittistä. Demoduloi signaali niin, että saat raakabittejä.
 
 
 
