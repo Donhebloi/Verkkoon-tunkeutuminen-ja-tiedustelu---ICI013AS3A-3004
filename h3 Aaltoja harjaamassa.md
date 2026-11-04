@@ -94,5 +94,41 @@ Multa puuttui jotain setuptoolsseja, mistä sain warning ilmoituksen, mutta eika
 Siitä sitten avautui URH:in käyttöliittymä.  
 
 
+## f) Yleiskuva. Kuvaile näytettä yleisesti.
+
+Taas latasin näytteen **wget** komennolla.  
+````
+wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/1-on-on-on-HackRF-20250412_113805-433_912MHz-2MSps-2MHz.complex16s
+````
+<img width="1890" height="42" alt="image" src="https://github.com/user-attachments/assets/e31553a1-e987-4788-8b43-e5b9bebeb4e7" />  
+
+Sitten avasin urh:in uudestaan, klikkasin vasemmasta yläreunasta File -> Open ja valitsin näytteen.  
+
+<img width="1231" height="201" alt="image" src="https://github.com/user-attachments/assets/7b6e26ba-241d-4e36-b9d1-c05fa2961192" />  
+
+Miltä näyte näyttää:  
+
+<img width="1901" height="538" alt="image" src="https://github.com/user-attachments/assets/2175c396-c793-4eff-9578-55e888020ba8" />  
+
+Hetken aluksi ihmettelin että miten aloitan tutkimaan janaa, kunnes tajusin että janaa klikkaamalla siitä voi valita haluamansa alueen. Valitsin koko janan jotta saisi yleiskuvan selville.  
+Koko jana valittuna:  
+
+<img width="1611" height="453" alt="image" src="https://github.com/user-attachments/assets/030ca8f1-931c-4b4b-9f8a-8a14bd2ea74d" />  
+
+Tästä selvisi janan pituus, joka on 5.49 sekunttia.  
+Janan vasemman yläreunan vieressä on sininen "i" nappi mistä näkee lisää tietoja janasta.  
+
+<img width="765" height="207" alt="image" src="https://github.com/user-attachments/assets/16aa6694-5214-4a98-a3bd-0d7e9806aa8b" />  
+
+Janan koko: 10.47MB  
+Luonti päivämäärä: 4.11.2026  
+Näytteet: 5491580  
+Näytteenottotaajuus: 1.0M
+Näytteen pituus: 5.49 s  
+
+
+
+
+
 
 
