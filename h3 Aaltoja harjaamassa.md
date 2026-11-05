@@ -42,7 +42,7 @@ Kuvassani näkyy 4 tulostetta, mutta niitä oli yhteensä 12.
 Googlasin myös **Proove-Security** sekä **Nexa-Security** ja nekin osoittautuivat älykotilaitteiksi.    
 Kaikilla on sama id tai house code "8785315", joten voisin olettaa että kaikki signaalit lähtevät samasta paikasta. **Proove-Security**llä ja **Nexa-Security**llä on sama **Unit** numero "3", mikä voisi tarkoittaa että laitteet on konfiguroitu yhdeksi yksiköksi. Ryhmätunnus, **Group 0** on kaikilla sama myös.     
 **Proove-Security** ja **Nexa-Security** ovat näytteessä aina kytkimen jälkeen joten luulen että ne reagoivat siihen kun kytkintä painetaan ja tässä tapauksessa sitä on painettu neljä kertaa.  
-Aikavälit näillä on 0.083284 - 0.383568 mikä voisi olla signaalin vastaanoton aika.  
+Aikavälit näillä on 0.083284 - 0.383568s mikä voisi olla signaalin vastaanoton aika.  
 Oletan että **Group call** on komento kytkimeltä muille laitteille mikä saa ne **State: Off** tilaan. Kytkimeltä luultavasti siis lähtee sammutuskomento.  
 
 
