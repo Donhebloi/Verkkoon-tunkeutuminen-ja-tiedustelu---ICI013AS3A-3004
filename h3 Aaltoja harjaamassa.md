@@ -129,6 +129,25 @@ Näytteen pituus: 5.49 s
 
 ## g) Bittistä. Demoduloi signaali niin, että saat raakabittejä.
 
+Modulaatio oli valmiiksi **ASK**, joten pidin sen koska sillä näkyi janan alla bittejä.  
+Huomasin myös, että **Signal view**in pystyi vaihtamaan. Alunperin Signal view oli "analog", mutta vaihdoin sen "Demodulated" muotoon.  
+
+<img width="1524" height="431" alt="image" src="https://github.com/user-attachments/assets/957ba266-c3b4-4bac-95e2-87752fc41e9f" />  
+
+Tästä sitten valitsin rivistä ensimmäisen bitin, joka oli "1".  
+
+<img width="1072" height="431" alt="image" src="https://github.com/user-attachments/assets/74912bb1-d34f-4ee0-84e0-0e053c294a46" />  
+
+Tästä selvisi yhden raakabitin kesto ajassa, joka on **525µs** eli 0.525 millisekunttia.  
+Valitsin vielä seuraavan bitin, joka oli "0".  
+
+<img width="1039" height="437" alt="image" src="https://github.com/user-attachments/assets/9cc4b36d-9c51-468b-9976-d205477eeb8f" />  
+
+Sen pituus ajassa on **518µs**, eli 0.518 millisekunttia. Hieman lyhyempi kuin ensimmäinen bitti.  
+Löysin sivuston, missä pystyy muuntamaan näytön virkistystaajuuden millisekunneiksi. Vertailua varten valitsin oman näytön virkistystaajuuden joka on 144Hz.  
+144Hz näytöllä menee 6.94 millisekunttia yhden ruudun näyttämiseen, joten tässä ajassa radiosignaali ehtii lähettämään noin 13 raakabittiä.  
+
+
 
 
 
