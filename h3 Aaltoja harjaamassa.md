@@ -33,12 +33,12 @@ wget https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/samples/Conve
 ````
 <img width="1832" height="272" alt="image" src="https://github.com/user-attachments/assets/acf60677-1a43-4b38-b794-31c27104c83d" />  
 
-Sitten ajoin ohjelman **rtl_433 -r Converted_433.92M_2000k.cs8** komennolla. Pidin tässä **merbanan** githubia auki, missä oli eri ajo ohjeita, mistä nappasin tuon -r option. -r optio lukee datan suoraan syötetystä tiedostosta, eikä vastaanottajasta.  
+Sitten ajoin ohjelman **rtl_433 -r Converted_433.92M_2000k.cs8** komennolla. Pidin tässä **merbanan** githubia auki, missä oli eri ajo ohjeita, mistä nappasin tuon **-r** option. **-r** optio lukee datan suoraan syötetystä tiedostosta, eikä vastaanottajasta.  
 
 <img width="1561" height="482" alt="image" src="https://github.com/user-attachments/assets/2480ac91-3da7-47fd-9788-935d5242fbcb" />  
 
 Kuvassani näkyy 4 tulostetta, mutta niitä oli yhteensä 12.  
-**KlikAanKlikUit-Switch**, **Proove-Security** ja **Nexa-Security** kaikki toistuivat kolme kertaa. Googlailin mikä KlikAanKlikUit-Switch voisi olla ja selvisi että se on jokin seinäkytkin tai älypistorasia. **Switch** loppuosan perusteella se on kytkin.   
+**KlikAanKlikUit-Switch**, **Proove-Security** ja **Nexa-Security** kaikki toistuivat kolme kertaa. Googlailin mikä **KlikAanKlikUit-Switch** voisi olla ja selvisi että se on jokin seinäkytkin tai älypistorasia. **Switch** loppuosan perusteella se on kytkin.   
 Googlasin myös **Proove-Security** sekä **Nexa-Security** ja nekin osoittautuivat älykotilaitteiksi.    
 Kaikilla on sama id tai house code "8785315", joten voisin olettaa että kaikki signaalit lähtevät samasta paikasta. **Proove-Security**llä ja **Nexa-Security**llä on sama **Unit** numero "3", mikä voisi tarkoittaa että laitteet on konfiguroitu yhdeksi yksiköksi. Ryhmätunnus, **Group 0** on kaikilla sama myös.     
 **Proove-Security** ja **Nexa-Security** ovat näytteessä aina kytkimen jälkeen joten luulen että ne reagoivat siihen kun kytkintä painetaan ja tässä tapauksessa sitä on painettu neljä kertaa.  
