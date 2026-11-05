@@ -143,7 +143,7 @@ Näytteen pituus: 5.49 s
 ## g) Bittistä. Demoduloi signaali niin, että saat raakabittejä.
 
 Modulaatio oli valmiiksi **ASK**, joten pidin sen koska sillä näkyi janan alla bittejä.  
-Huomasin myös, että **Signal view**in pystyi vaihtamaan. Alunperin Signal view oli "analog", mutta vaihdoin sen "Demodulated" muotoon.  
+*Signal view**in pystyi myös vaihtamaan. Alunperin Signal view oli "analog", mutta vaihdoin sen "Demodulated" muotoon.  
 
 <img width="1524" height="431" alt="image" src="https://github.com/user-attachments/assets/957ba266-c3b4-4bac-95e2-87752fc41e9f" />  
 
