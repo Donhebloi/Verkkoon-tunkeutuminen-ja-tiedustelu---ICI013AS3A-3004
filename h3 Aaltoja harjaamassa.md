@@ -40,7 +40,7 @@ Sitten ajoin ohjelman **rtl_433 -r Converted_433.92M_2000k.cs8** komennolla. Pid
 Kuvassani näkyy 4 tulostetta, mutta niitä oli yhteensä 12.  
 **KlikAanKlikUit-Switch**, **Proove-Security** ja **Nexa-Security** kaikki toistuivat kolme kertaa. Googlailin mikä KlikAanKlikUit-Switch voisi olla ja selvisi että se on jokin seinäkytkin tai älypistorasia. **Switch** loppuosan perusteella se on kytkin.   
 Googlasin myös **Proove-Security** sekä **Nexa-Security** ja nekin osoittautuivat älykotilaitteiksi.    
-Kaikilla on sama id tai house code "8785315", joten voisin olettaa että kaikki signaalit lähtevät samasta paikasta. Jokaisella on myös sama **Unit** numero "3", mikä voisi tarkoittaa että laitteet on konfiguroitu yhdeksi yksiköksi. Ryhmätunnus, **Group 0** on kaikilla sama myös.     
+Kaikilla on sama id tai house code "8785315", joten voisin olettaa että kaikki signaalit lähtevät samasta paikasta. **Proove-Security**llä ja **Nexa-Security**llä on sama **Unit** numero "3", mikä voisi tarkoittaa että laitteet on konfiguroitu yhdeksi yksiköksi. Ryhmätunnus, **Group 0** on kaikilla sama myös.     
 **Proove-Security** ja **Nexa-Security** ovat näytteessä aina kytkimen jälkeen joten luulen että ne reagoivat siihen kun kytkintä painetaan ja tässä tapauksessa sitä on painettu neljä kertaa.  
 Aikavälit näillä on 0.083284 - 0.383568 mikä voisi olla signaalin vastaanoton aika.  
 Oletan että **Group call** on komento kytkimeltä muille laitteille mikä saa ne **State: Off** tilaan. Kytkimeltä luultavasti siis lähtee sammutuskomento.  
