@@ -1,5 +1,17 @@
 # h3 Aaltoja harjaamassa
 
+## x) Lue ja tiivistä.
+
+Hubacek 2019  
+- Näytti miten signaali nauhotetaan URHilla.  
+- Näytti miten URHilla analysoidaan signaalia.
+- Kävi läpi bittejä ja demodulaatiota.
+  
+Cornelius 2022  
+- Sääasema purettiin rtl_433 avulla.
+- Sääaseman signaalia analysoitiin URHilla.
+- Sääaseman signaali demoduloitiin URHilla.
+
 ## b) rtl_433. Asenna rtl_433 automaattista analyysia varten.
 
 Katsoin asennusohjeet githubista -  https://github.com/merbanan/rtl_433  
@@ -109,8 +121,7 @@ Sitten avasin urh:in uudestaan, klikkasin vasemmasta yläreunasta File -> Open j
 Miltä näyte näyttää:  
 
 <img width="1901" height="538" alt="image" src="https://github.com/user-attachments/assets/2175c396-c793-4eff-9578-55e888020ba8" />  
-
-Hetken aluksi ihmettelin että miten aloitan tutkimaan janaa, kunnes tajusin että janaa klikkaamalla siitä voi valita haluamansa alueen. Valitsin koko janan jotta saisi yleiskuvan selville.  
+Janaa klikkaamalla siitä voi maalata haluamansa alueen. Valitsin koko janan jotta saisi yleiskuvan selville.  
 Koko jana valittuna:  
 
 <img width="1611" height="453" alt="image" src="https://github.com/user-attachments/assets/030ca8f1-931c-4b4b-9f8a-8a14bd2ea74d" />  
@@ -147,6 +158,13 @@ Sen pituus ajassa on **518µs**, eli 0.518 millisekunttia. Hieman lyhyempi kuin 
 Löysin sivuston, missä pystyy muuntamaan näytön virkistystaajuuden millisekunneiksi. Vertailua varten valitsin oman näytön virkistystaajuuden joka on 144Hz.  
 144Hz näytöllä menee 6.94 millisekunttia yhden ruudun näyttämiseen, joten tässä ajassa radiosignaali ehtii lähettämään noin 13 raakabittiä.  
 
+## Lähteet  
+
+Hubacek 2019, Universal Radio Hacker SDR Tutorial on 433 MHz radio plugs - https://www.youtube.com/watch?v=sbqMqb6FVMY&t=199s.  
+Cornelius 2022, Decode 433.92 MHz weather station data - https://www.onetransistor.eu/2022/01/decode-433mhz-ask-signal.html.  
+Karvinen, tehtävänannon vinkit - https://terokarvinen.com/verkkoon-tunkeutuminen-ja-tiedustelu/.  
+Merbanan, rtl_433 - https://github.com/merbanan/rtl_433.  
+PureUnits, Monitor Hz → ms Calculator - https://pureunits.com/tools/monitor-delay.  
 
 
 
