@@ -23,6 +23,8 @@ Kokeilin sitten ajaa ohjelman.
 
 <img width="939" height="96" alt="image" src="https://github.com/user-attachments/assets/b6dc3e5c-1978-4e78-ab17-61cdec878c7e" />  
 
+Tulostui ohjelman versio, joten ohjelma toimii.  
+
 ## c) Automaattinen analyysi. 
 
 Latasin tarvittavan näytteen Teron sivuilta **wget** komennolla  
