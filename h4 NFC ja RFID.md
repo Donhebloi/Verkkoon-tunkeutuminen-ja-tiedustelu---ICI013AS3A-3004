@@ -22,6 +22,7 @@ Passi käyttää PACE-protokollaa, joka suojaa passin sirua ja lukulaitteen väl
 Applen tuotteet käyttävät "Secure Element" toimintoa, mikä on suojattu ympäristö, joka pitää sisällään kaikki arkaluontoiset tiedot. Maksutapahtumat myös yleensä vaativat biometrisen tunnistautumisen.  
 iLOQ avain käyttää AES256-salausta, kaksisuuntaisa todennusta ja jokaisella avaimella on yksilöllinen tunniste. Avaimesta voidaan myös poistaa kulkuoikeudet, jos se katoaa tai päätyy vääriin käsiin.  
 Työpaikan kulkukortin suojasta ei ole mitään tietoa, kun en löytänyt kyseistä lätkää valmistajan sivuilta.  
+Tässä oli nyt aika tiivistetysti tuotteiden joitakin omia suojausominaisuuksia, niitä löytyy vielä lisää.  
 Eli sanoisin, että ihan kohtuullisen hyvin olen suojatunut RFID-urkinnalta, jos vaan lompakon ja muiden laitteiden suojat pitävät oikeasti paikkaansa.  
 
 
@@ -45,4 +46,39 @@ Data - Sisältää komennon mukana lähetettävän tiedon.
 Le - Ilmoittaa, kuinka paljon dataa odotetaan kortilta vastaukseksi.
 ````
 APDU-komentojen rakenne riippuu siitä, mitä komentoa ollaan suorittamassa. Sen takia kaikki kentät eivät ole jokaisessa APDU-komennossa mukana.  
+Kun älykortti vastaanottaa APDU-komennon, se käsittelee sen ja lähettää lukijalaitteelle **vastaus-APDU**:n.  
+Vastaus sisältää mahdollisesti kortin palauttamaa dataa sekä kaksi tilakoodia, **SW1** ja **SW2**.  
+Näiden tilakoodien avulla lukijalaite saa tiedon siitä, onnistuiko komennon suorittaminen vai tapahtuiko jokin virhe.  
+Esim. Tilakoodi **90 00** tarkoittaa, että komento suoritettiin onnistuneesti ja tilakoodi **6A 82** tarkoittaa, että pyydettyä tiedostoa tai kohdetta ei löytynyt.  
+**SELECT**-komento on yksi esimerkki APDU-komennosta. **SELECT**-komennolla lukijalaite voi valita älykortilta tietyn sovelluksen tai tiedoston. Tämän komennon avulla lukijalaite voi esim. Aloittaa kommunikoinnin tietyn korttisovelluksen kanssa.  
+Eli APDU-komennoilla älykortit ja eri laitteet pystyvät kommunikoimaan keskenään yhdenmukaisella tavalla.  
+
+
+## c) Tutki ja kerro minkä mielenkiintoisen RFID hakkerointi uutiset löysit. 
+
+Löysin **The Hacker News** -sivustolta vuonna 2018 julkaistun uutisen, jossa kerrottiin F-Securen tietoturvatutkijoiden **Tomi Tuomisen** ja **Timo Hirvosen** löytämästä haavoittuvuudesta hotellien sähköisissä lukitusjärjestelmissä.  
+Haavoittuvuus koski **Assa Abloyn** valmistamaa **Vision By VingCard** lukitusjärjestelmää, jota käytettiin yli 42000 kiinteistössä, 166 eri maassa.  
+**Tuominen** ja **Hirvonen** onnistuivat rakentamaan "Master Key":n, jolla pystyi avaamaan kaikki hotellihuoneet jotka käytti kyseistä järjestelmää.  
+Master Key:n luomiseen tarvitaan vain yksi järjestelmään kuuluva sähköinen avainkortti, oli se sitten uusi, vanha tai kokonaan poistettu käytöstä.  
+Avainkortin tiedot luetaan etää RFID-lukijalla tai saamalla kortti fyysisesti käsiinsä ja kortin tietoja muokataan erillisellä ohjelmointilaitteella, millä saadaan se Master Key tehtyä minuuteissa.  
+Hyökkäyksestä ei edes jää mitään jälkeä lukitusjärjestelmän lokitietoihin.  
+Tutkijat käyttivät omaa kustomoitua softaa, minkä avulla he onnistuivat hakkeroinnissa. Ilmiselvistä syistä he eivät ole julkistanut kyseistä softaa.  
+Tutkijat ilmoittivat haavoittuvuudesta Abloy:lle huhtikuussa 2017. Abloy teki yhteistyötä tutkijoiden kanssa ja julkaisi haavoittuvuuden korjaavat ohjelmistopäivitykset helmikuussa 2018.  
+Lähteissä on linkki videoon missä näytetään miten haavoittuvuus toimii.  
+
+
+### Lähteet  
+
+RFID Tags, Readers & Modules  - https://www.hidglobal.com/categories/rfid-tags-readers-modules  
+iLOQ S5 - https://www.iloq.com/fi/katalogi/k5s-6/
+RFID ja NFC – mikä on niiden välinen ero ja miten tunnistat kortin teknologian? - https://checkpointsystems.com/fi/blog/rfid-nfc-kortit-lahimaksaminen-ero/  
+Apple-alustojen tietoturva - https://support.apple.com/fi-fi/guide/security/sec2561eb018/web  
+Supplemental access control - https://en.wikipedia.org/wiki/Supplemental_access_control  
+Biometrinen passi - https://fi.wikipedia.org/wiki/Biometrinen_passi  
+Hackers build a 'Master Key' that unlocks millions of Hotel rooms - https://thehackernews.com/2018/04/hacking-hotel-master-key.html  
+One Key That Can Hack Them All - https://www.youtube.com/watch?v=1PSwH8ldw5M&t=37s  
+ChatGPT käytetty ARDP-komentojen rakenteen tutustumiseen  
+
+
+
 
