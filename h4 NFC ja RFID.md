@@ -63,14 +63,14 @@ Master Key:n luomiseen tarvitaan vain yksi järjestelmään kuuluva sähköinen 
 Avainkortin tiedot luetaan etää RFID-lukijalla tai saamalla kortti fyysisesti käsiinsä ja kortin tietoja muokataan erillisellä ohjelmointilaitteella, millä saadaan se Master Key tehtyä minuuteissa.  
 Hyökkäyksestä ei edes jää mitään jälkeä lukitusjärjestelmän lokitietoihin.  
 Tutkijat käyttivät omaa kustomoitua softaa, minkä avulla he onnistuivat hakkeroinnissa. Ilmiselvistä syistä he eivät ole julkistanut kyseistä softaa.  
-Tutkijat ilmoittivat haavoittuvuudesta Abloy:lle huhtikuussa 2017. Abloy teki yhteistyötä tutkijoiden kanssa ja julkaisi haavoittuvuuden korjaavat ohjelmistopäivitykset helmikuussa 2018.  
+Tutkijat ilmoittivat haavoittuvuudesta **Abloy**:lle huhtikuussa 2017. **Abloy** teki yhteistyötä tutkijoiden kanssa ja julkaisi haavoittuvuuden korjaavat ohjelmistopäivitykset helmikuussa 2018.  
 Lähteissä on linkki videoon missä näytetään miten haavoittuvuus toimii.  
 
 
 ### Lähteet  
 
 RFID Tags, Readers & Modules  - https://www.hidglobal.com/categories/rfid-tags-readers-modules  
-iLOQ S5 - https://www.iloq.com/fi/katalogi/k5s-6/
+iLOQ S5 - https://www.iloq.com/fi/katalogi/k5s-6/  
 RFID ja NFC – mikä on niiden välinen ero ja miten tunnistat kortin teknologian? - https://checkpointsystems.com/fi/blog/rfid-nfc-kortit-lahimaksaminen-ero/  
 Apple-alustojen tietoturva - https://support.apple.com/fi-fi/guide/security/sec2561eb018/web  
 Supplemental access control - https://en.wikipedia.org/wiki/Supplemental_access_control  
