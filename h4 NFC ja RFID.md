@@ -20,7 +20,7 @@ Maksukorttini osalta olen suojautunut kohtuullisen hyvin RFID-urkinnalta lompakk
 Passi, puhelimeni, kelloni ja avaimeni hyödyntävät niiden omia suojausominaisuuksia.  
 Passi käyttää PACE-protokollaa, joka suojaa passin sirua ja lukulaitteen välistä NFC-tiedonsiirtoa salakuuntelulta ja luvattomalta lukemiselta.  
 Applen tuotteet käyttävät "Secure Element" toimintoa, mikä on suojattu ympäristö, joka pitää sisällään maksamiseen liittyvät arkaluontoiset tiedot. Maksutapahtumat myös yleensä vaativat biometrisen tunnistautumisen.  
-iLOQ avain käyttää AES256-salausta, kaksisuuntaisa todennusta ja jokaisella avaimella on yksilöllinen tunniste. Avaimesta voidaan myös poistaa kulkuoikeudet, jos se katoaa tai päätyy vääriin käsiin.  
+iLOQ avain käyttää AES256-salausta, kaksisuuntaista todennusta ja jokaisella avaimella on yksilöllinen tunniste. Avaimesta voidaan myös poistaa kulkuoikeudet, jos se katoaa tai päätyy vääriin käsiin.  
 Työpaikan kulkukortin suojasta ei ole mitään tietoa, kun en löytänyt kyseistä lätkää valmistajan sivuilta.  
 Tässä oli nyt aika tiivistetysti tuotteiden joitakin omia suojausominaisuuksia, niitä löytyy vielä lisää.  
 Eli sanoisin, että ihan kohtuullisen hyvin olen suojatunut RFID-urkinnalta, jos vaan lompakon ja muiden laitteiden suojat pitävät oikeasti paikkaansa.  
