@@ -7,19 +7,19 @@ Lähdin tutkimaan omia tuotteita, jotka voisivat sisältää RFID ominaisuuksia 
 Työpaikan HID-kulkulätkä
 Maksukortti
 Passi
-ILOQ avain
+iLOQ avain
 Apple Watch
 Iphone 15 Pro
 RFID Safe lompakko
 ````
-Googlasin näiden tuotteiden RFID ominaisuudet. HID käyttää RFID teknologiaa, mutta en löytänyt työpaikkani käyttämää lätkää HID:in sivuilta. Mutta todennököisesti työpaikkani HID-kulkulätkä hyödyntää RFID:tä.  
+Googlasin näiden tuotteiden RFID ominaisuuksia. HID käyttää RFID teknologiaa, mutta en löytänyt työpaikkani käyttämää lätkää HID:in sivuilta. Mutta todennököisesti työpaikkani HID-kulkulätkä hyödyntää RFID:tä.  
 Suomen passeissa on RFID siru, joka sisältää henkilötiedot, kasvokuvan ja sormenjäljet.  
 RFID safe lompakko, minkä pitäisi suojata maksukorttiani.  
-Sitten maksukorttini, puhelimeni, kelloni ja kotiavaimeni. Nämä käyttävät NFC-teknologiaa, joka on RFID:n alamuoto. Esim. Maksukortin, puhelimen ja kellon lähimaksuominaisuus käyttää NFC:tä ja ILOQ-avain pystyy kommunikoimaan langattomasti ulko-oven lukijan kanssa NFC:n takia.  
+Sitten maksukorttini, puhelimeni, kelloni ja kotiavaimeni. Nämä käyttävät NFC-teknologiaa, joka on RFID:n alamuoto. Esim. Maksukortin, puhelimen ja kellon lähimaksuominaisuus käyttää NFC:tä ja iLOQ-avain pystyy kommunikoimaan langattomasti ulko-oven lukijan kanssa NFC:n takia.  
 Maksukorttini osalta olen suojautunut kohtuullisen hyvin RFID-urkinnalta lompakkoni ansiosta, mutta en tosiaan tiedä kuinka hyvä suoja siinä oikeasti on.  
 Passi, puhelimeni, kelloni ja avaimeni hyödyntävät niiden omia suojausominaisuuksia.  
 Passi käyttää PACE-protokollaa, joka suojaa passin sirua ja lukulaitteen välistä NFC-tiedonsiirtoa salakuuntelulta ja luvattomalta lukemiselta.  
-Applen tuotteet käyttävät "Secure Element" toimintoa, mikä on suojattu ympäristö, joka pitää sisällään kaikki arkaluontoiset tiedot. Maksutapahtumat myös yleensä vaativat biometrisen tunnistautumisen.  
+Applen tuotteet käyttävät "Secure Element" toimintoa, mikä on suojattu ympäristö, joka pitää sisällään maksamiseen liittyvät arkaluontoiset tiedot. Maksutapahtumat myös yleensä vaativat biometrisen tunnistautumisen.  
 iLOQ avain käyttää AES256-salausta, kaksisuuntaisa todennusta ja jokaisella avaimella on yksilöllinen tunniste. Avaimesta voidaan myös poistaa kulkuoikeudet, jos se katoaa tai päätyy vääriin käsiin.  
 Työpaikan kulkukortin suojasta ei ole mitään tietoa, kun en löytänyt kyseistä lätkää valmistajan sivuilta.  
 Tässä oli nyt aika tiivistetysti tuotteiden joitakin omia suojausominaisuuksia, niitä löytyy vielä lisää.  
@@ -58,7 +58,7 @@ Eli APDU-komennoilla älykortit ja eri laitteet pystyvät kommunikoimaan kesken�
 
 Löysin **The Hacker News** -sivustolta vuonna 2018 julkaistun uutisen, jossa kerrottiin F-Securen tietoturvatutkijoiden **Tomi Tuomisen** ja **Timo Hirvosen** löytämästä haavoittuvuudesta hotellien sähköisissä lukitusjärjestelmissä.  
 Haavoittuvuus koski **Assa Abloyn** valmistamaa **Vision By VingCard** lukitusjärjestelmää, jota käytettiin yli 42000 kiinteistössä, 166 eri maassa.  
-**Tuominen** ja **Hirvonen** onnistuivat rakentamaan "Master Key":n, jolla pystyi avaamaan kaikki hotellihuoneet jotka käytti kyseistä järjestelmää.  
+**Tuominen** ja **Hirvonen** onnistuivat rakentamaan "Master Key":n, jolla pystyi avaamaan kaikki hotellihuoneet jotka käyttivät kyseistä järjestelmää.  
 Master Key:n luomiseen tarvitaan vain yksi järjestelmään kuuluva sähköinen avainkortti, oli se sitten uusi, vanha tai kokonaan poistettu käytöstä.  
 Avainkortin tiedot luetaan etää RFID-lukijalla tai saamalla kortti fyysisesti käsiinsä ja kortin tietoja muokataan erillisellä ohjelmointilaitteella, millä saadaan se Master Key tehtyä minuuteissa.  
 Hyökkäyksestä ei edes jää mitään jälkeä lukitusjärjestelmän lokitietoihin.  
@@ -74,9 +74,10 @@ iLOQ S5 - https://www.iloq.com/fi/katalogi/k5s-6/
 RFID ja NFC – mikä on niiden välinen ero ja miten tunnistat kortin teknologian? - https://checkpointsystems.com/fi/blog/rfid-nfc-kortit-lahimaksaminen-ero/  
 Apple-alustojen tietoturva - https://support.apple.com/fi-fi/guide/security/sec2561eb018/web  
 Supplemental access control - https://en.wikipedia.org/wiki/Supplemental_access_control  
-Biometrinen passi - https://fi.wikipedia.org/wiki/Biometrinen_passi  
+Näin käytät passia - https://poliisi.fi/nain-kaytat-passia#nain-kaytat-passia  
 Hackers build a 'Master Key' that unlocks millions of Hotel rooms - https://thehackernews.com/2018/04/hacking-hotel-master-key.html  
 One Key That Can Hack Them All - https://www.youtube.com/watch?v=1PSwH8ldw5M&t=37s  
+Smart Card APDU Commands: A Practical Developer Reference - https://ambimat.com/smart-card-selected-apdu-commands/  
 ChatGPT käytetty ARDP-komentojen rakenteen tutustumiseen  
 
 
