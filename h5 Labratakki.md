@@ -79,7 +79,7 @@ Siirryin takaisin siihen h3 terminaaliin jossa ajoin **sshesame -port 22 -listen
 
 <img width="963" height="129" alt="image" src="https://github.com/user-attachments/assets/4e35da1b-8904-4bdd-ae94-0cd88b66f117" />  
 
-ARP-myrkytys siis toimi. Kun yritin muodostaa h1 koneelta SSH yhteyden h2 koneeseen, niin SSH yhteys ohjautui h3 koneella pyörivälle SSHeSame palvelimelle, jonka lokiin tallentui h1 koneen IP-osoite, käyttäjätunnus ja salasana.  
+ARP-myrkytys siis toimi. Kun yritin muodostaa h1 koneelta SSH yhteyden h2 koneeseen, niin SSH yhteys ohjautui h3 koneella pyörivälle SSHeSame palvelimelle, jonka lokiin tallentui h2 koneen IP-osoite, käyttäjätunnus ja salasana.  
 Näin hyökkääjä olisi voinut siepata kirjautumistiedot ARP-myrkytyksen avulla.  
 
 Kävin vielä katsomassa wireshark liikenteen:  
@@ -88,11 +88,70 @@ Kävin vielä katsomassa wireshark liikenteen:
 
 Wiresharkista näkyi myös että myrkytys onnistui. Suodatin wiresharkin näyttämään vain ARP-paketit helpompaa havainnollistamista varten.  
 H3 kone lähetti toistuvia ARP-vastauksia, jossa se väitti omaavansa sekä h1 että h2 koneiden IP-osoitteet. Tämän takia wiresharkissa lukee "10.0.0.1 is at 00:00:00:00:00:03" ja "10.0.0.2 is at 00:00:00:00:00:03", vaikka se ei pidä paikkaansa.  
-Wireshark tunnisti tämän ja merkkasi paketit varoituksella "Duplicate IP address detected for 10.0.0.1 (00:00:00:00:00:03) also in use by 00:00:00:00:00:01" ja "Duplicate IP address detected for 10.0.0.2 (00:00:00:00:00:03) also in use by 00:00:00:00:00:02"
+Wireshark tunnisti tämän ja merkkasi paketit varoituksella "Duplicate IP address detected for 10.0.0.1 (00:00:00:00:00:03) also in use by 00:00:00:00:00:01" ja "Duplicate IP address detected for 10.0.0.2 (00:00:00:00:00:03) also in use by 00:00:00:00:00:02"  
+Hyökkäys perustuu siis siihen, että verkkoon lähetetään väärennettyjä ARP-viestejä, joiden avulla kohdekoneelle saadaan virheellinen IP- ja MAC-osoiteen välinen vastaavuus. Kohdekone siten lähettää liikennettä hyökkääjän koneelle, oikean kohdekoneen sijasta.  
 
 
+## b) ICMP Spoofing ja TCP Session Hijacking
 
+Aloitin siirtymällä tehtävien hakemistoon, joka oli **/lab/01-Network-Security-Lab/scripts** 
+Avasin tehtävien README:n osoitteesta **https://github.com/ssam246/Network-Security-Lab** ja lähdin seuraamaan ohjeita.  
 
+Käynnistin mininet ympäristön **sudo python3 hub_topo.py** komennolla ja kokeilin toimiiko yhteys **pingall** komennolla:  
+
+<img width="1074" height="477" alt="image" src="https://github.com/user-attachments/assets/b6743bb9-b77c-4927-93a8-58c094698ffc" />  
+
+Avasin sitten h1 terminaalin, **xterm h1** ja siellä käynnistin **python3 sniff_icmp.py** skriptin.  
+
+H2 terminaalissa ajoin **ping 10.0.0.1** komennon:  
+
+H1: Vastaanottaa paketit 
+<img width="807" height="219" alt="image" src="https://github.com/user-attachments/assets/81c7a6fb-5a02-4d72-bf82-5a8530e04fa9" />  
+
+H2: Pingaa osoitteen "10.0.0.1"  
+<img width="728" height="155" alt="image" src="https://github.com/user-attachments/assets/00030b03-35b1-4444-982f-339fcc002ab5" />  
+
+Tämän jälkeen avasin vielä h3 terminaalin, jossa ajoin **python3 spoof_icmp.py** skriptin.  
+Ajoin h1 **sniff** skriptin ja h2 terminaalissa **ping** komennon uudestaan.  
+
+H3: Lähettää nyt yhden ylimääräisen, väärennetyn paketin  
+<img width="802" height="184" alt="image" src="https://github.com/user-attachments/assets/28221077-c055-41a3-b538-b3459665cc46" />  
+
+H1: H1 nyt vastaanottaa ylimääräisen paketin, jonka takia näkyy kaksi "10.0.0.1 > 10.0.0.2" riviä peräkkäin.    
+<img width="813" height="114" alt="image" src="https://github.com/user-attachments/assets/a6127b0e-635f-4076-b710-e9b386d0194c" />  
+
+H2: Pingaa edelleen samalla tavalla  
+<img width="723" height="127" alt="image" src="https://github.com/user-attachments/assets/8f7d6a45-f7e3-4cb0-969f-133db502e3f1" />  
+
+H1 **sniff_icmp.py** skriptin normaali request/reply vuorottelu muuttui, kun verkkoon tuli ylimääräinen paketti.  
+H3 **spoof_icmp.py** skripti teki tämän ylimääräisen paketin jolla oli väärennetty lähdeosoite. Skripti sai näyttämään siltä, että paketti tulisi oikeasti "10.0.0.1" osoitteesta.  
+ICMP ei siis sisällä mitään todennusmekanismia lähdeosoitteen tarkistamiseksi, minkä takia hyökkääjä voi lähettää väärennettyjä paketteja, jotka näyttävät siltä että ne tulevat oikeasta osoitteesta.  
+Tällä tavalla hyökkääjä voisi häiritä kommunikaatiota tai käyttäää tätä tekniikkaa osana laajempaa Man in The Middle-hyökkäystä.  
+
+Sitten **TCP Hijacking**  
+Käynnistin kaikki kolme terminaalia uudelleen, jonka jälkeen ajoin skriptit tässä järjestyksessä:  
+````
+H1: python3 tcp_server.py - Taustalle kuuntelemaan
+H3: python3 sniff_tcp_session.py - Taustalle sniffaamaan
+H2: python3 tcp_client.py - Yhdistämään kohdekoneeseen
+H3 uusiksi: python3 tcp_hijack.py - Kaappaamaan H2 ja H1 välisen liikenteen
+````
+
+H1: TCP serveri kuunteli ja sai yhteyden osoitteeseen "10.0.0.2" sekä "Hello" viestin.  
+<img width="902" height="103" alt="image" src="https://github.com/user-attachments/assets/96d003eb-3322-4061-b9df-75660d221521" />  
+
+H3: Sniffasi liikenteen, jonka jälkeen lähetti yhden väärennetyn paketin.  
+<img width="966" height="471" alt="image" src="https://github.com/user-attachments/assets/1c8c4e62-3a92-493a-8bb4-70979670d695" />  
+
+H2: Lähetti ja vastaanotti "Hello" viestin.  
+<img width="916" height="96" alt="image" src="https://github.com/user-attachments/assets/7ec6ff1d-092e-4b1b-bb29-f2ed42a65df3" />  
+  
+Tämä ei nyt tainnut onnistua ihan niin kuin piti.  
+**sniff_tcp_session.py** onnistui havaitsemaan käynnissä olevan TCP-session h1:n ja h2:n välillä sekä sai selville niiden SEQ ja ACK numerot.  
+**tcp_hijack.py** yritti lähettää väärennetyn paketin samaan sessioon, mutta se ei nyt tainnut tulla perille, vaikka h3 väitti lähettäneensä sen.  
+Tässä voi olla ongelmana se että **hijack** ei onnistunut väärentämään lähdeosoitetta ja kohdeporttia tai TCP-sessio oli niin lyhyt, että se ehti sulkeutua ennenkuin väärennetty paketti saapui perille.  
+Hyvin todennäköisesti ongelma johtuu vain omista taidoista.  
+Ainakin tämän avulla saan sellaisen käsityksen, että TCP-session kaappaaminen on vaikeampaa, kuin esim. Edellisen ICMP:n väärentäminen.  
 
 
 
