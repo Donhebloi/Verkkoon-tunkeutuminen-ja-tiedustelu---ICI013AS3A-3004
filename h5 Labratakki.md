@@ -154,4 +154,41 @@ Hyvin todennäköisesti ongelma johtuu vain omista taidoista.
 Ainakin tämän avulla saan sellaisen käsityksen, että TCP-session kaappaaminen on vaikeampaa, kuin esim. Edellisen ICMP:n väärentäminen.  
 
 
+## C) 02-SDN-DDos_Simulation tryout
+
+Aloitin taas avaamalla tehtävän README:n, joka löytyy tehtävän kansiosta ja githubista - https://github.com/santhisenan/SDN_DDoS_Simulation  
+Lähdin tästä sitten seuraamaan README:n ohjeita.  
+Avasin kaksi mininet terminaalia ja siirryin kummassaki tehtävän hakemistoon.  
+Ekassa terminaalissa ajoin komennon **sudo python3 simple_tree_top.py**  
+
+<img width="1135" height="98" alt="image" src="https://github.com/user-attachments/assets/9cb17da5-6d2e-41de-a8dc-93b327b68290" />  
+
+Siirryin tästä toiseen terminaaliin, missä ajoin **PYTHONPATH=. ryu/ryu/bin/ryu-manager main.py** komennon, mutta se ei toiminut.  
+Tajusin tässä, että olin kopioinut komennon suoraan ohjeista ja niissä **ryu-manager** on ladattu eri kohtaan kuin itsellä.  
+Tarkistin **which ryu-manager** komennolla mihin se oli minulla ladattuna ja muutin komentoa sen mukaan.  
+Nyt sitten ajoin komennon uudestaan **PYTHONPATH=. ryu-manager main.py**:  
+
+<img width="1749" height="550" alt="image" src="https://github.com/user-attachments/assets/f3c6a89a-21f5-4151-9a91-bafbfd037430" />  
+
+Tässä tulostui virheilmoituksia, jotka ignorasin ja toivoin että tehtävä silti toimisi.  
+Siirryin takaisin ensimmäiseen terminaaliin ja ajoin **sudo python3 tree_topology.py**  
+
+<img width="1119" height="301" alt="image" src="https://github.com/user-attachments/assets/1cbab1c1-94c8-404a-b3ff-e38368ad1e03" />  
+
+Simulaatio käynnistyi niin kuin piti. Jokaisessa episodissa joku host hyökkää ja toinen host lähettää normaalia liikennettä:  
+````
+Episode 0
+host5 is attacking and host0 is sending normal requests
+Episode 1
+host1 is attacking and host4 is sending normal requests
+Episode 2
+host3 is attacking and host0 is sending normal requests
+Episode 3
+host5 is attacking and host4 is sending normal requests
+````
+
+Episodeja oli 99 jonka jälkeen terminaali palautti komentokehotteen.  
+
+<img width="741" height="76" alt="image" src="https://github.com/user-attachments/assets/198b17e9-220c-418a-b534-8a8e24cb426b" />  
+
 
