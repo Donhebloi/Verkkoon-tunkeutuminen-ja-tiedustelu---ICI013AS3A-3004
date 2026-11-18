@@ -191,4 +191,9 @@ Episodeja oli 99 jonka jälkeen terminaali palautti komentokehotteen.
 
 <img width="741" height="76" alt="image" src="https://github.com/user-attachments/assets/198b17e9-220c-418a-b534-8a8e24cb426b" />  
 
+Kävin googlesta lukemassa lisää infoa SYN-flood hyökkäyksestä ja kysäsin Claude (Sonnet 5) tekoälyä vähän selventämään suoritettua simulaatiota.  
+SYN-flood on siis palvelunestohyökkäys, joka hyödyntää TCP-protokollan kolmivaiheista kättelyä.  
+Normaalisti kun muodostetaan yhteys, asiakas lähettää palvelimelle SYN-paketin, palvelin vastaa SYN-ACK-paketilla ja lopuksi vielä asiakas vahvistaa yhteyden ACK-paketilla.  
 
+Simuloitu hyökkäys suoritti siis 100 episodia, jossa jokaisella kierroksella yksi satunnaisesti valittu host toimi hyökkääjänä kohdehostia vastaan, samalla kun toinen host lähetti samaan aikaan normaalia liikennettä samalle kohteelle.  
+Simulaatio vastaa realistista DDoS-hyökkäystä, jossa kohde vastaanottaa samanaikaiseksi sekä hyökkäysliikennettä että laillisia pyyntöjä.
