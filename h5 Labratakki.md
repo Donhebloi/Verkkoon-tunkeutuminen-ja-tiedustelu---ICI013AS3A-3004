@@ -2,6 +2,7 @@
 
 ## a) Aja tunnilla esitetty ARP hyökkäys ja tutki, miten se toimii.
 
+Hyökkäystä varten tarvittiin Mininet-harjoituskone, jonka latasin opettajan materiaaleista tunnin aikana. Käytin Mininet konetta Oracle VirtualBox Managerin kautta.  
 Aloitin seuraamalla ohjeita, jotka löytyivät kurssin luento materiaaleista.  
 Eli avasin Mininet koneen ja suoritin komennon:  
 ````
