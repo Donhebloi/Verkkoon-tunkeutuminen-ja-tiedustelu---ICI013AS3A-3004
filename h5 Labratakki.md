@@ -106,7 +106,7 @@ Avasin sitten h1 terminaalin, **xterm h1** ja siellä käynnistin **python3 snif
 
 H2 terminaalissa ajoin **ping 10.0.0.1** komennon:  
 
-H1: Vastaanottaa paketit 
+H1: Vastaanottaa paketit  
 <img width="807" height="219" alt="image" src="https://github.com/user-attachments/assets/81c7a6fb-5a02-4d72-bf82-5a8530e04fa9" />  
 
 H2: Pingaa osoitteen "10.0.0.1"  
