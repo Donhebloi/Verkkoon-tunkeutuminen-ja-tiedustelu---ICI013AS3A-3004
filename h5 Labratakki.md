@@ -204,3 +204,14 @@ ACK = Vahvistaa vastauksen ja avaa yhteyden
 Kolmannen vaiheen jälkeen, yhteys on muodostunut ja data voi kulkea. SYN-flood jättää kolmivaiheisen kättelyn tahallisesti kesken toisessa vaiheessa. Kun palvelin ei saa lopullista ACK:ia niin yhteys jää puoliavoimeksi.  
 Simuloitu hyökkäys suoritti siis 100 episodia, jossa jokaisella kierroksella yksi satunnaisesti valittu host toimi hyökkääjänä kohdehostia vastaan, samalla kun toinen host lähetti samaan aikaan normaalia liikennettä samalle kohteelle.  
 Simulaatio vastaa DDoS-hyökkäystä, jossa kohde vastaanottaa samanaikaiseksi sekä hyökkäysliikennettä että oikeita pyyntöjä. Kun hyökkääjän tulva on tarpeeksi suuri, kohteeen yhteysjono voi täyttyä hyökkääjän puoliavoimista yhteyksistä, jolloin normaalikäyttäjän oikeita pyyntöjä ei ehditä käsittelemään tai ne eivät enään mahdu yhteysjonoon.  
+
+
+###
+Lähteet
+Luentomateriaalit ja ohjeet kurssin Moodlesta  
+Network-Security-Lab, README - https://github.com/ssam246/Network-Security-Lab  
+DDoS Simulation in a Software Defined Network, README - https://github.com/santhisenan/SDN_DDoS_Simulation?tab=readme-ov-file  
+SYN flood attack - https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/  
+What is a SYN flood DoS attack? - https://www.techtarget.com/news/What-is-a-SYN-flood-DoS-attack/836531/  
+Claude (Sonnet 5) käytetty c) tehtävässä
+
