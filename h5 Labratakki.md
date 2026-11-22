@@ -213,8 +213,8 @@ Simuloitu hyökkäys suoritti siis 100 episodia, jossa jokaisella kierroksella y
 Simulaatio vastaa DDoS-hyökkäystä, jossa kohde vastaanottaa samanaikaiseksi sekä hyökkäysliikennettä että oikeita pyyntöjä. Kun hyökkääjän tulva on tarpeeksi suuri, kohteeen yhteysjono voi täyttyä hyökkääjän puoliavoimista yhteyksistä, jolloin normaalikäyttäjän oikeita pyyntöjä ei ehditä käsittelemään tai ne eivät enään mahdu yhteysjonoon.  
 
 
-###
-Lähteet
+### Lähteet
+
 Luentomateriaalit ja ohjeet kurssin Moodlesta  
 Network-Security-Lab, README - https://github.com/ssam246/Network-Security-Lab  
 DDoS Simulation in a Software Defined Network, README - https://github.com/santhisenan/SDN_DDoS_Simulation?tab=readme-ov-file  
