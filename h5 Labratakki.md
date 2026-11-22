@@ -102,7 +102,7 @@ Hyökkäys perustuu siis siihen, että verkkoon lähetetään väärennettyjä A
 
 ## b) ICMP Spoofing ja TCP Session Hijacking
 
-Aloitin siirtymällä tehtävien hakemistoon, joka oli **/lab/01-Network-Security-Lab/scripts** 
+Aloitin siirtymällä tehtävien hakemistoon, joka oli **/lab/01-Network-Security-Lab/scripts**  
 Avasin tehtävien README:n osoitteesta **https://github.com/ssam246/Network-Security-Lab** ja lähdin seuraamaan ohjeita.  
 
 Käynnistin mininet ympäristön **sudo python3 hub_topo.py** komennolla ja kokeilin toimiiko yhteys **pingall** komennolla:  
