@@ -195,5 +195,11 @@ Kävin googlesta lukemassa lisää infoa SYN-flood hyökkäyksestä ja kysäsin 
 SYN-flood on siis palvelunestohyökkäys, joka hyödyntää TCP-protokollan kolmivaiheista kättelyä.  
 Normaalisti kun muodostetaan yhteys, asiakas lähettää palvelimelle SYN-paketin, palvelin vastaa SYN-ACK-paketilla ja lopuksi vielä asiakas vahvistaa yhteyden ACK-paketilla.  
 
+````
+SYN = Haluaa yhdistää
+SYN-ACK = Haluaa yhdistää myös ja vahvistaa pyynnön
+ACK = Vahvistaa vastauksen ja avaa yhteyden
+````
+Kolmannen vaiheen jälkeen, yhteys on muodostunut ja data voi kulkea. SYN-flood jättää kolmivaiheisen kättelyn tahallisesti kesken toisessa vaiheessa. Kun palvelin ei saa lopullista ACK:ia niin yhteys jää puoliavoimeksi.  
 Simuloitu hyökkäys suoritti siis 100 episodia, jossa jokaisella kierroksella yksi satunnaisesti valittu host toimi hyökkääjänä kohdehostia vastaan, samalla kun toinen host lähetti samaan aikaan normaalia liikennettä samalle kohteelle.  
-Simulaatio vastaa realistista DDoS-hyökkäystä, jossa kohde vastaanottaa samanaikaiseksi sekä hyökkäysliikennettä että laillisia pyyntöjä.
+Simulaatio vastaa DDoS-hyökkäystä, jossa kohde vastaanottaa samanaikaiseksi sekä hyökkäysliikennettä että oikeita pyyntöjä. Kun hyökkääjän tulva on tarpeeksi suuri, kohteeen yhteysjono voi täyttyä hyökkääjän puoliavoimista yhteyksistä, jolloin normaalikäyttäjän oikeita pyyntöjä ei ehditä käsittelemään tai ne eivät enään mahdu yhteysjonoon.  
