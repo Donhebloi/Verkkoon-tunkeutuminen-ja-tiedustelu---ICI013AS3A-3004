@@ -24,6 +24,7 @@ Yritin sitten yhdistää h1 koneeseen **xterm h1** komennolla, mutta se ei onnis
 
 <img width="263" height="37" alt="image" src="https://github.com/user-attachments/assets/f3879b1e-e469-48d1-a80c-845407fdc1a8" />  
 
+Tässä kohtaa avasin Kali virtuaalikoneen ja otin ssh yhteyden omaan Mininet koneeseen. Sama ongelma toistui edelleen.   
 Tästä sitten avasin taas uuden terminaali ikkunan ja seurasin opettajan antamia ohjeita **xterm** ongelmien ratkomiseen.  
 Uudessa ikkunassa ajoin komennon **./get_xauth.sh**:  
 Tulostui **mininet-vm/unix:11  MIT-MAGIC-COOKIE-1  c709c63c5aeaf55c525e6f0e19492417**  
