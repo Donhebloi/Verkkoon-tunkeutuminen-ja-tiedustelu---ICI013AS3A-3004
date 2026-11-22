@@ -41,6 +41,12 @@ Tästä sitten etenin taas ohjeiden mukaan ja ajoin h1 terminaalissa **arp -n** 
 
 <img width="510" height="73" alt="image" src="https://github.com/user-attachments/assets/6224afc8-deb7-46c6-8163-e03e7636a523" />  
 
+````
+Alkuperäiset osoitteet:
+10.0.0.2 - 00:00:00:00:00:02
+10.0.0.3 - 00:00:00:00:00:03
+````
+
 Sitten siirryin takaisin **mininet>** komentoriville, avasin h3 terminaalin **xterm h3** komennolla ja ajoin komennot:  
 ````
 sysctl -w net.ipv4.ip_forward=1
