@@ -117,7 +117,7 @@ Kuvan ihan viimeisellä rivillä on kyseinen MAC-osoite ja **ESSID** sarakkeesta
 
 
 Tästä sitten ohjeita seuraamalla ajoin **cat ~/rockyou-top100000.txt | awk '{print "wifi-" $1}' > ~/wifi-rockyou.txt** komennon, mutta se ei toiminut, koska **rockyou-top100000.txt** oli root hakemistossa, eikä user hakemistossa missä itse olin.  
-Kopioin sitten **sudo cp /root/rockyou-top100000.txt ~/rockyou-top100000.txt** komennolla tiedoston user kansioon.   
+Kopioin sitten **sudo cp /root/rockyou-top100000.txt ~/rockyou-top100000.txt** komennolla tiedoston user hakemistoon.   
 
 
 <img width="1114" height="31" alt="image" src="https://github.com/user-attachments/assets/d117829b-0b36-49a4-8244-b84178f1115c" />  
