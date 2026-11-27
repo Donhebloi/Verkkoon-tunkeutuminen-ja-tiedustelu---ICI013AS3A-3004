@@ -105,4 +105,29 @@ Tästä selvisi piilotettu ESSID, "wifi-free"
 
 <img width="419" height="559" alt="image" src="https://github.com/user-attachments/assets/01110303-2534-498c-aac8-8e4d1874de31" />  
 
+## b) Mitä opit ja mitkä asia yllättivät sinut?
+
+Tehtävistä opin enemmän wifin toiminnasta ja työkaluista joita käytetään wifin tutkimiseen.  
+En ole aikaisemmin käyttänyt **airmon-ng**, **airodump-ng** ja **mkd4** työkaluja, joten niiden käyttötarkoitukset ja toiminta tulivat tutummaksi tehtävien aikana.  
+Yllätyin eniten siitä, että miten helposti muutamalla työkalulla ja komennolla voi selvittää tietoja wifistä ja siihen yhdistetyistä laitteista, ilman että verkkoon edes muodostaisi yhteyttä.  
+Tukiasemien kanavat, MAC-osoitteet ja verkkoon yhdistettyjen asiakkaiden tietoja sai selville monitorointitilassa ihan pelkän verkkoliikenteen tarkkailulla.  
+Jopa piilotetun WLAN verkon nimen sai aika helposti esille, muokkaamalla valmiiksi luotua sanalistaa ja käyttämällä **mkd4** työkalua.  
+Tietenkin tässä helpotti todella paljon sivuston oma walkthrough, mutta on silti yllättävää miten helposti näitä tietoja sai esille.  
+Tehtävät siis auttoivat ymmärtämään paremmin, millaista tietoa wifi verkoista saa selville muutamalla työkalulla ja komennolla sekä miten niitä käytetään.  
+Vaikka raporttia varten tein vaan neljä ensimmäistä tehtävää, niin ne olivat sen verta mielenkiintoisia, että varmasti jatkan niiden tekemistä vapaa-ajalla.  
+
+## c) Miten suhtautumisesi WLANin turvallisuuteen muuttui sen jälkeen kun teit harjoitukset?
+
+Alan suhtautumaan WLAN verkkojen turvallisuuteen nyt aikaisempaa vakavammin. 
+En ole oikeastaan aikaisemmin edes ajatellut kunnolla, että miten helposti kaikkia tietoja saa selville, ihan vaan muutamalla työkalulla.  
+Jos pelkällä verkon tarkkailulla saa jo tän verran tietoa selville, niin mitä kaikkea sitten voisi saada aikaan jos tunkeutuisi vielä syvemmälle verkkoon.   
+Pidän nyt myös sen mielessä, että langattoman verkon turvallisuudessa pitää muistaa huomioida muutakin kuin itse tukiasema, sillä verkkoon yhdistetyt laitteet ja niiden tiedot voi paljastaa tietoja verkon käyttäjistä.  
+
+
+### Lähteet
+
+Challenges - https://lab.wifichallenge.com/challenges  
+Walkthrough WiFiChallenge Lab v2.0 - https://r4ulcl.com/posts/walkthrough-wifichallenge-lab-2.0/#01-what-is-the-channel-that-the-wifi-global-access-point-ap-is-currently-using  
+Airmon-ng - https://www.aircrack-ng.org/doku.php?id=airmon-ng  
+Airodump-ng - https://www.aircrack-ng.org/doku.php?id=airodump-ng  
 
